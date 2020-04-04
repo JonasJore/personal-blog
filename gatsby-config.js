@@ -5,6 +5,7 @@ module.exports = {
       options: {
         tslint: false
       }
-    }
+    },
+    `gatsby-plugin-sass`
   ]
 }

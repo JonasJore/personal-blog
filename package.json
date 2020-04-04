@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "gatsby": "^2.20.12",
+    "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-ts-loader": "^0.1.0",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
