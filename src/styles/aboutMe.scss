@@ -1,8 +1,18 @@
 $imageSize: 75px;
 
 .aboutMe-container {
+  display: flex;
+  flex-direction: row;
   width: 840px;
   border: solid 1px black;
+  
+  .aboutMe-container__img {
+    padding: 2%;
+  }
+
+  .aboutMe-container__bio {
+    padding: .5%;
+  }
 }
 
 .profilePicture {

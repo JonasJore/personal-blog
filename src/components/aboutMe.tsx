@@ -1,15 +1,27 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import profile_picture from '../assets/profile_picture.jpg';
 
-export const AboutMe = (): JSX.Element => (
+type AboutMeProptypes = {
+  name: string;
+  description: string;
+  twitterHandle: string;
+}
+
+export const AboutMe = ({ name, description, twitterHandle }: AboutMeProptypes): JSX.Element => (
   <div>
     <div className="aboutMe-container">
-      <img 
-        className="profilePicture"
-        src={profile_picture} 
-        alt="profile picture"
-      />
+      <div className="aboutMe-container__img">
+        <img
+          className="profilePicture"
+          src={profile_picture}
+          alt="about me"
+        />
+      </div>
+      <div className="aboutMe-container__bio">
+        <h4>Personal blog by <a href={`https://www.twitter.com/${twitterHandle}`}>{name}</a></h4>
+        <p>{description}</p>
+      </div>
     </div>
   </div>
 )
+
