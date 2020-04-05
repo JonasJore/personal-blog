@@ -18,8 +18,10 @@ export const AboutMe = ({ name, description, twitterHandle }: AboutMeProptypes):
         />
       </div>
       <div className="aboutMe-container__bio">
-        <h4>Personal blog by <a href={`https://www.twitter.com/${twitterHandle}`}>{name}</a></h4>
-        <p>{description}</p>
+        <p>
+          Personal blog by <a href={`https://www.twitter.com/${twitterHandle}`}>{name}</a><br/>
+          I&nbsp;{description}
+        </p>
       </div>
     </div>
   </div>

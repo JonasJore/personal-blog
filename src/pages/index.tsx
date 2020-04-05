@@ -1,17 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from 'gatsby'
 
 import "../styles/global.scss"
 import { AboutMe } from "../components/aboutMe"
+import { Header } from "../components/header"
 
-export default ({ data }: any): JSX.Element => (
+type siteMetadataType = {
+  data: {
+    site: {
+      siteMetadata: {
+        author: {
+          name: string
+          summary: string
+        }
+        description: string
+        social: {
+          twitter: string
+          instagram: string
+        }
+      }
+    }
+  }
+}
+
+export default ({ data }: siteMetadataType): JSX.Element => (
   <div>
     <div className="mainContainer">
-      <div className="header">
-        
-      </div>
-      <div className="aboutMe">
+      <Header />
+      <div className="aboutMeSection">
         <AboutMe 
           name={data.site.siteMetadata.author.name}
           description={data.site.siteMetadata.description}
