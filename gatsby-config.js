@@ -6,7 +6,7 @@ module.exports = {
       summary: `Developer working and living in Oslo, Norway`,
     },
     description: `A personal blog built using Gatsby for educational purposes.`,
-    siteUrl: `tba`,
+    siteUrl: `https://github.com/JonasJore/personal-blog`,
     social: {
       twitter: `JonasJore`,
       instagram: `jore_irl`
