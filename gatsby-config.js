@@ -8,17 +8,17 @@ module.exports = {
     description: `A personal blog built using Gatsby for educational purposes.`,
     siteUrl: `https://github.com/JonasJore/personal-blog`,
     social: {
-      twitter: `JonasJore`,
-      instagram: `jore_irl`
+      twitter: `@JonasJore`,
+      instagram: `jore_irl`,
     },
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-ts-loader",
+      resolve: 'gatsby-plugin-ts-loader',
       options: {
-        tslint: false
-      }
+        tslint: false,
+      },
     },
-    `gatsby-plugin-sass`
-  ]
+    `gatsby-plugin-sass`,
+  ],
 }

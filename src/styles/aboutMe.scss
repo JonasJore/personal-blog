@@ -1,0 +1,12 @@
+$imageSize: 75px;
+
+.aboutMe-container {
+  width: 840px;
+  border: solid 1px black;
+}
+
+.profilePicture {
+  height: $imageSize;
+  widht: $imageSize;
+  border-radius: 100%;
+}
