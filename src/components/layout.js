@@ -19,6 +19,7 @@ const Layout = ({ location, title, children }) => {
         }}
       >
         <Link
+          className="blog-layout-header"
           style={{
             boxShadow: `none`,
             color: `inherit`,
