@@ -1,7 +1,16 @@
+$headerMainColor: #3DADAB;
+
 h1, a {
-  color: #3DADAB;
+  color: $headerMainColor;
 }
 
 .blog-layout-header {
   font-size: 32px;
+  box-shadow: none;
+  color: inherit;
+}
+
+.blog-post-header-link {
+  box-shadow: none;
+  color: inherit;
 }

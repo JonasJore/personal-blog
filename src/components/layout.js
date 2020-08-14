@@ -5,7 +5,7 @@ import { rhythm, scale } from "../utils/typography"
 
 import "./layout.scss"
 
-const Layout = ({ location, title, children }) => {
+export const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -32,17 +32,9 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <h3
-        style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
+      <h3>
+        <Link 
+          className="blog-post-header-link"
           to={`/`}
         >
           {title}
@@ -50,6 +42,7 @@ const Layout = ({ location, title, children }) => {
       </h3>
     )
   }
+  
   return (
     <div
       style={{
@@ -61,7 +54,9 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
+      <footer 
+        className="blog-footer"
+      >
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
@@ -69,5 +64,3 @@ const Layout = ({ location, title, children }) => {
     </div>
   )
 }
-
-export default Layout
