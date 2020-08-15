@@ -1,14 +1,44 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
+import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
-import SEO from "../components/seo"
+import { SEO } from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+// TODO: types need to be separated into types files
+type edges = {
+  node: {
+    excerpt: string;
+    fields: {
+      slug: string;
+    };
+    frontmatter: {
+      date: string;
+      title: string;
+      description: string;
+    };
+  };
+  description: string;
+};
+
+type blogIndexProptypes = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+    allMarkdownRemark: {
+      edges: edges[];
+    }
+  };
+  location: string;
+};
+
+// TODO: layout children cant be set to any
+const BlogIndex: React.FC<blogIndexProptypes> = ({ data, location }) => {
+  const siteTitle: string = data.site.siteMetadata.title
+  const posts: edges[] = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -46,7 +76,7 @@ const BlogIndex = ({ data, location }) => {
 
 export default BlogIndex
 
-export const pageQuery = graphql`
+export const pageQuery: void = graphql`
   query {
     site {
       siteMetadata {

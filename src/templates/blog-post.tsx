@@ -1,12 +1,55 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
-import SEO from "../components/seo"
+import { SEO } from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+type blogPostTemplateProptypes = {
+  data: {
+    markdownRemark: {
+        frontmatter: {
+          title: string;
+          description: string;
+          slug: string;
+          date: string;   
+        };
+        html: string;
+        excerpt: string;
+    };
+    site: {
+      siteMetadata: {
+        title: string;
+      }
+    }
+  }
+  pageContext: {
+    previous: {
+      frontmatter: {
+        title: string;
+        description: string;
+        slug: string;
+      };
+      fields: {
+        slug: string;
+      };
+    };
+    next: {
+      frontmatter: {
+        title: string;
+        description: string;
+        slug:string;
+      }
+      fields: {
+        slug: string;
+      }
+}
+  };
+  location: string;
+}
+
+const BlogPostTemplate = ({ data, pageContext, location }: blogPostTemplateProptypes) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext

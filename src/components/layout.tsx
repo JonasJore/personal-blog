@@ -5,9 +5,18 @@ import { rhythm, scale } from "../utils/typography"
 
 import "./layout.scss"
 
-export const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
+// TODO: please rearrange types soon
+type layoutProptypes = {
+  location: any;
+  title: string;
+  children: any;
+};
+
+export const Layout = ({ location, title, children }: layoutProptypes): JSX.Element => {
+  // @ts-ignore
+  const rootPath: string = `${__PATH_PREFIX__}/`
+  
+  let header: JSX.Element
 
   if (location.pathname === rootPath) {
     header = (
