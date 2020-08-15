@@ -2,11 +2,22 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { Layout } from "../components/layout"
-import SEO from "../components/seo"
+import { SEO } from "../components/seo"
 
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+// TODO: todo goes into dedicated files
+type notFoundPageProptypes = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
+  location: string;
+};
 
+const NotFoundPage = ({ data, location }: notFoundPageProptypes): JSX.Element => {
+  const siteTitle: string = data.site.siteMetadata.title
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
@@ -18,7 +29,7 @@ const NotFoundPage = ({ data, location }) => {
 
 export default NotFoundPage
 
-export const pageQuery = graphql`
+export const pageQuery: void = graphql`
   query {
     site {
       siteMetadata {
