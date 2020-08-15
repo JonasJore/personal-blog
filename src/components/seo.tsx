@@ -4,10 +4,16 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 // TODO: move types to dedicated types.ts
+type metaType = {
+  name:
+  string;
+  content:
+  string;
+};
 type seoProptypes = {
   description: string;
   lang: string;
-  meta: any;
+  meta: metaType[];
   title: string;
 };
 
@@ -91,11 +97,4 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
