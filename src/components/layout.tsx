@@ -66,9 +66,9 @@ export const Layout = ({ location, title, children }: layoutProptypes): JSX.Elem
       <footer 
         className="blog-footer"
       >
-        © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()} - Built with
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <a href="https://www.gatsbyjs.org">Gatsby</a> ⚡
       </footer>
     </div>
   )
