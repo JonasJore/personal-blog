@@ -2,6 +2,7 @@
 
 It is built on Gatsby which is blazingly fast at rendering static html-pages. 
 Maybe that is why i got interested in trying it out in the first place. Also, i get to write my content in markdown.
+Which is nice!
 
 My goal for this project is to become a better writer and to share my experiences working as a fullstack developer in Oslo🇳🇴
 
